@@ -1,0 +1,9 @@
+schema_version: 1
+
+name: wildFly-Camel
+version: 1.0
+description: "Add WildFly-Camel extension and subsystem configuration"
+
+execute:
+- script: configure.sh
+  user: 185

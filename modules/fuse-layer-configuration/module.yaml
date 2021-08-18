@@ -1,0 +1,8 @@
+schema_version: 1
+
+name: fuse-layer-configuration
+version: "1.0"
+description: "Add fuse layer configuration"
+
+execute:
+- script: configure.sh

@@ -1,0 +1,35 @@
+schema_version: 1
+
+name: "fuse7/fuse-eap-openshift-jdk11-rhel8"
+description: "Platform for building and running Apache Camel applications on EAP 7.4"
+version: "1.9"
+from: "registry-proxy.engineering.redhat.com/rh-osbs/jboss-eap-7-eap74-openjdk11-openshift-rhel8:7.4.0-3"
+
+labels:
+- name: "com.redhat.component"
+  value: "fuse-eap-openshift-jdk11-rhel-8-container"
+- name: "maintainer"
+  value: "Thomas Diesler <tdiesler@redhat.com>"   
+- name: "io.k8s.description"
+  value: "Platform for building and running Apache Camel applications on EAP 7.4"
+- name: "io.k8s.display-name"
+  value: "Fuse for OpenShift - EAP based"
+- name: "io.openshift.tags"
+  value: "builder,javaee,eap,eap7,fuse"
+
+envs:
+- name: "WILDFLY_CAMEL_VERSION"
+  value: "5.7.0.fuse-790045-redhat-00001"
+
+modules:
+  repositories:
+    - path: modules
+
+  install:
+    - name: fuse-eap-distribution
+    - name: jolokia-opts
+    - name: wildFly-Camel
+    - name: fuse-layer-configuration
+
+run:
+  user: 185    

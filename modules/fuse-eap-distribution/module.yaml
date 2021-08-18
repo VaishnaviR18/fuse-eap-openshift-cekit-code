@@ -1,0 +1,20 @@
+schema_version: 1
+
+name: fuse-eap-distribution
+version: 1.0
+description: "Add & extract fuse-eap distribution"
+
+envs:
+- name: WILDFLY_CAMEL_VERSION
+  value: 5.7.0.fuse-790045-redhat-00001
+
+artifacts:
+- name: "wildfly-camel-patch.tar.gz"
+  sha512: "66b0b51028feefcb73b683c668f05d7aa9bd7252f509c3d33613db06df66266b986334e4a99b2826e21a0f965488b8b4952b1dd8aacfea5b3d7813f9f2b18c04"
+  url: "http://indy.psi.redhat.com/api/content/maven/group/redhat-builds/org/wildfly/camel/wildfly-camel-patch/5.7.0.fuse-790045-redhat-00001/wildfly-camel-patch-5.7.0.fuse-790045-redhat-00001.tar.gz"
+  dest: "/tmp/"
+  target: "wildfly-camel-patch.tar.gz"
+
+execute:
+- script: install.sh
+  user: 185
